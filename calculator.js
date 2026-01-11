@@ -108,3 +108,10 @@ document.addEventListener("keydown", (e) => {
 
 // ===== LOAD HISTORY ON START =====
 window.addEventListener("load", loadHistory);
+
+// ===== EXPORTS FOR BUTTONS =====
+window.appendToDisplay = appendToDisplay;
+window.clearDisplay = clearDisplay;
+window.calculate = calculate;
+window.clearHistory = clearHistory;
+window.toggleTheme = toggleTheme;
