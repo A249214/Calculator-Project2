@@ -1,0 +1,179 @@
+:root{
+    --bg: hsl(0,0%,95%);
+    --calc-bg: hsl(0,0%,15%);
+    --btn: hsl(0,0%,30%);
+    --op: hsl(35,100%,55%);
+    --text: white;
+}
+
+.light{
+    --bg: #f5f5f5;
+    --calc-bg: #ffffff;
+    --btn: #ddd;
+    --op: #ff9800;
+    --text: #000;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    min-height: 100vh;
+    background: var(--bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    transition: .3s;
+}
+
+.app{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.theme-btn{
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    font-size: 1.5rem;
+    border: none;
+    background: var(--op);
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.calculator{
+    background: var(--calc-bg);
+    border-radius: 15px;
+    padding: 15px;
+    width: 100%;
+    max-width: 350px;
+}
+
+.display{
+    width: 100%;
+    font-size: 2.5rem;
+    padding: 10px;
+    text-align: right;
+    border: none;
+    background: transparent;
+    color: var(--text);
+}
+
+.keys{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+}
+
+button{
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border: none;
+    background: var(--btn);
+    color: var(--text);
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.operator-btn{
+    background: var(--op);
+}
+
+/* ===== CALCULATOR HISTORY ===== */
+.calc-history{
+    margin-top: 20px;
+    width: 100%;
+    max-width: 400px;
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
+    border-radius: 18px;
+    padding: 15px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+    color: white;
+}
+
+/* Header */
+.history-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.history-header h2{
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+/* Clear Button */
+.clear-history{
+    background: crimson;
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.clear-history:hover{
+    background: #ff2e44;
+}
+
+/* History list */
+.history-list{
+    max-height: 220px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* History Card */
+.history-item{
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    padding: 12px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform .3s, box-shadow .3s;
+}
+
+.history-item:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* Text */
+.history-text{
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* Delete button */
+.delete-history{
+    background: transparent;
+    border: none;
+    color: #ffdddd;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.delete-history:hover{
+    color: #ff4b5c;
+}
+@media (max-width:700px){
+    .app{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
